@@ -1,0 +1,16 @@
+@import "../Mixins/movements.scss";
+
+.image-box{
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  @include transform(translateX(-100vw));
+  @include transition(transform 1s ease-out);
+  margin: 20px;
+  &.over{
+    @include transform(translateX(0));
+  }
+  &__background{
+    
+  }
+}

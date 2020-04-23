@@ -1,0 +1,56 @@
+@import "../Mixins/movements.scss";
+
+%hover_active_color{
+  color:black;
+}
+.side-drawer{
+  height:100%;
+  background:white;
+  box-shadow: 2px 0px 10px rgba(0,0,0,0.5);
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 70%;
+  max-width:400px;
+  z-index: 200;
+  @include transform(translateX(-100%));
+  @include transition(transform 0.3s ease-out);
+
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    height:100%;
+  }
+  li{
+    margin:0;
+    padding:0.5rem 0;
+    &:hover{
+      border-style:solid;
+      border-width: 0px 0px 0px 4px; /* 25px top, 10px right, 4px bottom and 35px left */
+      border-color:tomato;
+    }
+  }
+
+  a{
+    color:black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display:flex;
+    width:100%;
+    margin-left:4px;
+    &:hover{
+      @extend %hover_active_color;
+    }
+    &:active{
+      @extend %hover_active_color;
+    }
+  }
+
+  &.open{
+    @include transform(translateX(0));
+  }
+
+}

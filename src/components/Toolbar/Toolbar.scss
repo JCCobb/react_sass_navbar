@@ -1,0 +1,74 @@
+@import '../Responsive/_responsive.scss';
+
+%hover_active_color{
+  color:black;
+}
+
+$toolbar_width:50px;
+
+.toolbar{
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  height: $toolbar_width;
+  top:0;
+  left:0;
+
+  &__logo{
+    @include respond-to-above(medium-screens) { margin-left:0;}
+    a {
+      color:black;
+      text-decoration:none;
+      font-size:1.5rem;
+    }
+  }
+
+  &__navigation{
+    display:flex;
+    align-items:center;
+    height:100%;
+    padding: 0 1rem;
+  }
+  &_navigation-items{
+    @include respond-to-below(medium-screens) { display:none;}
+    a{
+      color:black;
+      text-decoration: none;
+      &:hover{
+        @extend %hover_active_color;
+      }
+      &:active{
+        @extend %hover_active_color;
+      }
+    }
+    ul{
+      list-style: none;
+      margin:0;
+      padding:0;
+      display: flex;
+    }
+    li{
+      padding:0 0.5rem;
+      &:hover{
+        border-style:solid;
+        border-width: 0px 0px 2px 0px; /* 25px top, 10px right, 4px bottom and 35px left */
+        border-color:tomato;
+      }
+    }
+  }
+
+  &__spacer{
+    flex:1;
+  }
+
+  &__logo{
+    margin-left: 1rem;
+  }
+
+  &__toggle-button{
+    @include respond-to-above(medium-screens) { display:none;}
+  }
+  &__margin{
+    height:$toolbar_width;
+  }
+}

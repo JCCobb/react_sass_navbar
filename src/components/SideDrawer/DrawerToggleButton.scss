@@ -1,0 +1,23 @@
+@import '../Responsive/_responsive.scss';
+
+.toggle-button{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 36px;
+  background: transparent;
+  border: none;
+  padding:0;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:focus{
+    outline:none;
+  }
+
+  &__line{
+    width:25px;
+    height:2px;
+    background:black;
+  }
+}
